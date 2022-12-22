@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{post.category}} </h1>
+{% for post in category_posts %}
+   <div class="card">
+     <h5 class="card-header"></h5>
+     <div class="card-body">
+       <h5 class="card-title">{{post.title}}</h5>
+       <p class="card-text">{{ post.body|slice:":200"|safe }}<br/>-<b> {{ post.author }} </b><br/></p>
+       <a href="{% url 'article-detail' post.pk %}" class="btn btn-primary">Read blog</a>
+     </div>
+   </div>
+{% endfor %}     
+     
+     
+{% endblock content %}

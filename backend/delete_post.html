@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+    {% block content %}
+    <div class='container my-2 py-2'> 
+    <h2>Delete Blog post</h2>
+    <h3>Delete : {{post.title}}</h3>
+    <br/>
+     <form method = "POST">
+             {% csrf_token %}
+             <button class="btn btn-secondary">Delete Post!</button>
+            
+     </div>
+    <br/>
+    {% endblock content %}
